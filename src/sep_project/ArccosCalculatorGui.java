@@ -53,6 +53,7 @@ public class ArccosCalculatorGui extends JFrame implements ActionListener {
     add(promptLabel, gbc);
 
     inputField = new JTextField(10);
+    inputField.setToolTipText("Enter a value between -1 and 1");
     inputField.setFont(new Font(DEFAULT_FONT, Font.PLAIN, 14));
     gbc.gridx = 1;
     gbc.gridy = 0;
