@@ -1,3 +1,6 @@
+package sep_project;
+
+
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -10,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
+import javax.swing.WindowConstants;
+
 
 /**
  * A simple GUI-based calculator that computes arccos(x) using
@@ -26,12 +31,14 @@ public class ArccosCalculatorGui extends JFrame implements ActionListener {
   private final JTextField inputField;
   private final JLabel resultLabel;
   private final JButton calcButton;
+  private static final String DEFAULT_FONT = "SansSerif";
+
 
   /** Constructs the GUI layout for the Arccos Calculator. */
   public ArccosCalculatorGui() {
     setTitle("arccos(x) Calculator");
     setSize(400, 200);
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     setLayout(new GridBagLayout());
     setLocationRelativeTo(null);
 
@@ -40,19 +47,19 @@ public class ArccosCalculatorGui extends JFrame implements ActionListener {
     gbc.fill = GridBagConstraints.HORIZONTAL;
 
     JLabel promptLabel = new JLabel("Enter x (between -1 and 1): ");
-    promptLabel.setFont(new Font("SansSerif", Font.PLAIN, 14));
+    promptLabel.setFont(new Font(DEFAULT_FONT, Font.PLAIN, 14));
     gbc.gridx = 0;
     gbc.gridy = 0;
     add(promptLabel, gbc);
 
     inputField = new JTextField(10);
-    inputField.setFont(new Font("SansSerif", Font.PLAIN, 14));
+    inputField.setFont(new Font(DEFAULT_FONT, Font.PLAIN, 14));
     gbc.gridx = 1;
     gbc.gridy = 0;
     add(inputField, gbc);
 
     calcButton = new JButton("Calculate");
-    calcButton.setFont(new Font("SansSerif", Font.BOLD, 14));
+    calcButton.setFont(new Font(DEFAULT_FONT, Font.BOLD, 14));
     gbc.gridx = 0;
     gbc.gridy = 1;
     gbc.gridwidth = 2;
@@ -79,7 +86,7 @@ public class ArccosCalculatorGui extends JFrame implements ActionListener {
       double arcsin = computeArcsin(x, 15);
       double arccos = Math.PI / 2 - arcsin;
       resultLabel.setText(String.format("arccos(%.4f) = %.6f radians", x, arccos));
-    } catch (NumberFormatException ex) {
+    } catch (NumberFormatException _) {
       resultLabel.setText("Invalid input. Please enter a real number.");
     }
   }
