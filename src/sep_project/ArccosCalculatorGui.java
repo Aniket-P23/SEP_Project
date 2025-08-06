@@ -24,7 +24,7 @@ import javax.swing.WindowConstants;
  * the result in radians.
  *
  * @author Aniket
- * @version 1.0.2
+ * @version 1.1.0
  */
 public class ArccosCalculatorGui extends JFrame implements ActionListener {
 
@@ -55,12 +55,16 @@ public class ArccosCalculatorGui extends JFrame implements ActionListener {
     inputField = new JTextField(10);
     inputField.setToolTipText("Enter a value between -1 and 1");
     inputField.setFont(new Font(DEFAULT_FONT, Font.PLAIN, 14));
+    inputField.getAccessibleContext().setAccessibleName("Input Field");
+    inputField.getAccessibleContext().setAccessibleDescription("Enter a value between minus one and one");
     gbc.gridx = 1;
     gbc.gridy = 0;
     add(inputField, gbc);
 
     calcButton = new JButton("Calculate");
     calcButton.setFont(new Font(DEFAULT_FONT, Font.BOLD, 14));
+    calcButton.getAccessibleContext().setAccessibleName("Calculate Button");
+    calcButton.getAccessibleContext().setAccessibleDescription("Click to calculate arccos of the entered value");
     gbc.gridx = 0;
     gbc.gridy = 1;
     gbc.gridwidth = 2;
@@ -69,6 +73,8 @@ public class ArccosCalculatorGui extends JFrame implements ActionListener {
     resultLabel = new JLabel("");
     resultLabel.setFont(new Font("Monospaced", Font.BOLD, 14));
     resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
+    resultLabel.getAccessibleContext().setAccessibleName("Result Display");
+    resultLabel.getAccessibleContext().setAccessibleDescription("Displays the arccos calculation result in radians");
     gbc.gridx = 0;
     gbc.gridy = 2;
     gbc.gridwidth = 2;
