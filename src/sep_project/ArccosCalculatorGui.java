@@ -86,7 +86,7 @@ public class ArccosCalculatorGui extends JFrame implements ActionListener {
       double arcsin = computeArcsin(x, 15);
       double arccos = Math.PI / 2 - arcsin;
       resultLabel.setText(String.format("arccos(%.4f) = %.6f radians", x, arccos));
-    } catch (NumberFormatException _) {
+    } catch (NumberFormatException ignored) {
       resultLabel.setText("Invalid input. Please enter a real number.");
     }
   }
