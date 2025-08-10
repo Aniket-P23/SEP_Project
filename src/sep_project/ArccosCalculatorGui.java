@@ -24,19 +24,20 @@ import javax.swing.WindowConstants;
  * the result in radians.
  *
  * @author Aniket
- * @version 1.1.0
+ * @version 1.2.0
  */
 public class ArccosCalculatorGui extends JFrame implements ActionListener {
 
   private final JTextField inputField;
   private final JLabel resultLabel;
   private final JButton calcButton;
+  private static final String VERSION = "1.2.0";
   private static final String DEFAULT_FONT = "SansSerif";
 
 
   /** Constructs the GUI layout for the Arccos Calculator. */
   public ArccosCalculatorGui() {
-    setTitle("arccos(x) Calculator");
+    setTitle("arccos(x) Calculator — v" + VERSION);
     setSize(400, 200);
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     setLayout(new GridBagLayout());
@@ -79,6 +80,7 @@ public class ArccosCalculatorGui extends JFrame implements ActionListener {
     gbc.gridy = 2;
     gbc.gridwidth = 2;
     add(resultLabel, gbc);
+
   }
 
   @Override
